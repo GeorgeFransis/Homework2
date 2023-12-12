@@ -12,7 +12,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.util.List;
 import java.util.ArrayList;
- 
+
 public class MiniTwitterGUI extends JFrame {
 
     private DefaultMutableTreeNode root;
@@ -58,6 +58,7 @@ public class MiniTwitterGUI extends JFrame {
         JButton showGroupTotalButton = new JButton("Show Group Total");
         JButton showMessagesTotalButton = new JButton("Show Messages Total");
         JButton showPositivePercentageButton = new JButton("Show Positive Percentage");
+        JButton uniqueIDButton = new JButton("User/Group ID verification");
 
         inputPanel.add(new JPanel());
         inputPanel.add(new JPanel());
