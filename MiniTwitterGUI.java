@@ -12,7 +12,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.util.List;
 import java.util.ArrayList;
-
+ 
 public class MiniTwitterGUI extends JFrame {
 
     private DefaultMutableTreeNode root;
