@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+class User {
+    private String userId;
+    private long creationTime;
+    private long lastUpdateTime;
+
+    public User(String userId) {
+        this.userId = userId;
+        this.creationTime = System.currentTimeMillis();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public long getCreationTime() {
+        return creationTime;
+    }
+
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void postTweet(String tweet) {
+        // Logic for posting a tweet
+        // ...
+
+        // Update lastUpdateTime when a tweet is posted
+        lastUpdateTime = System.currentTimeMillis();
+    }
+}
+
+class Admin {
+    private List<User> users = new ArrayList<>();
+    private Set<String> userIds = new HashSet<>();
+
+    public void addUser(User user) {
+        // Check for duplicate and space-free IDs
+        if (!userIds.contains(user.getUserId()) && !user.getUserId().contains(" ")) {
+            users.add(user);
+            userIds.add(user.getUserId());
+        }
+    }
+
+    public void validateUserIds() {
+        boolean allIdsValid = !userIds.stream().anyMatch(id -> id.contains(" ") || userIds.stream().filter(id::equals).count() > 1);
+
+        if (allIdsValid) {
+            System.out.println("All User IDs are valid.");
+        } else {
